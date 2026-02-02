@@ -1,0 +1,10 @@
+.home{
+    display: flex;
+    padding: 12px;
+    margin: 10px;
+    background-color: cadetblue;
+    height: 80vh;
+}
+.hero{
+   color: white;
+}

@@ -1,0 +1,16 @@
+{% extends "Portfolio/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "Portfolio/css/home.css" %}">
+{% endblock %}
+{% block content %}
+<div class="home">
+    <div class="hero">
+        <h1>Hi, I'm <span>Muhammad Ahmad</span></h1>
+        <p>Web Developer</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dignissimos nostrum illo!
+        </p>
+    </div>
+</div>
+{% endblock content %}

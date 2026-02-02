@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+.logo h1 a{
+    text-decoration: none;
+    color: black;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 2rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+nav li a:hover{
+    color: burlywood;
+}
+
+
