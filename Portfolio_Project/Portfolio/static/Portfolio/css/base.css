@@ -26,5 +26,8 @@ nav ul li a{
 nav li a:hover{
     color: burlywood;
 }
-
-
+footer{
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}

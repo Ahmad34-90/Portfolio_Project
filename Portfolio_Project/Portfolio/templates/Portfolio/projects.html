@@ -1,0 +1,39 @@
+{% extends "Portfolio/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "Portfolio/css/projects.css" %}">
+{% endblock %}
+{% block content %}
+<div class="project_page">
+    <div><h1 style="text-align: center;">Projects</h1></div>
+    <div class="projects">
+        <div class="column">
+            <div class="proj_box">
+                <h2 class="name">Portfolio Website</h2>
+                <span>Overview</span>
+                <p class="overview">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatem, dolor est eaque maxime doloribus?kajsdfhkjashdf jaskhdfjshadf hakshdfkjh  jaksdhfjkhasdjf aksjdhkjcnnm jashkdjf kajshdkfjhsa.
+                </p>
+                <span>Tools/Technologies</span>
+                <div class="tech_list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>Django</li>
+                </div>
+            </div>
+            <div class="img">
+                <img src={% static "Portfolio\image\project1.png"%} alt="Project1">
+                <div class="links">
+                        <a class="a" href="#">GitHub</a>
+                        <a class="a" href="#">Live</a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+</div>
+{% endblock content %}

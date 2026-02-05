@@ -1,0 +1,72 @@
+.project_page{
+    padding: 15px;
+    margin: 10px;
+    background-color: cadetblue;
+}
+.column{
+    display: flex;
+    justify-content: space-evenly;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+.proj_box{
+    padding: 12px;
+    margin: 25px;
+    width: 25rem;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 6px #1113;
+}
+.proj_box h2{
+    text-align: center;
+}
+.proj_box span{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.proj_box .overview{
+    height: 80px;
+    padding: 6px;
+    font-size: 16px;
+}
+.proj_box .tech_list{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 10px;
+    gap: 5px;
+}
+.tech_list li{
+    padding: 12px;
+    background-color: #1113;
+    border-radius: 10px;
+}
+.img img{
+    height: 12rem;
+    width: 25rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 6px #1113;
+    margin: 40px;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.a{
+    text-decoration: none;
+    background-color: aliceblue;
+    color: black;
+    padding: 9px;
+    margin: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}

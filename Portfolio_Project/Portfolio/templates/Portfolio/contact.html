@@ -1,0 +1,16 @@
+{% extends "Portfolio/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "Portfolio/css/contact.css" %}">
+{% endblock %}
+{% block content %}
+<div class="contact-page">
+    <h1>Contact Me</h1>
+    <form action="">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form> 
+</div>
+{% endblock content %}

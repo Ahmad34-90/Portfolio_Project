@@ -6,5 +6,40 @@
     height: 80vh;
 }
 .hero{
-   color: white;
+    padding: 8rem;
+    color: white;
+    animation: textFadeUp 1.2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes textFadeUp {
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero .name{
+    color: rgb(203, 216, 203);
+}
+.hero .occupation{
+    color: rgb(211, 211, 211);
+    font-size: 20px;
+}
+.hero .para{
+    color: rgb(46, 54, 48);
+}
+.home .img{
+    padding: 6rem;
+}
+.home .img img{
+    height: 250px;
+    width: auto;
+    border-radius: 300px;
+    border: 1px solid rgb(139, 138, 139);
+    box-shadow: cornsilk;
 }

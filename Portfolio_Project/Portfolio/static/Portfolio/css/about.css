@@ -1,0 +1,80 @@
+.about-page{
+    padding: 15px;
+    margin: 10px;
+    background-color: cadetblue;
+    animation: textFadeUp 1.2s ease forwards;
+    opacity: 1;
+}
+.about-hero h1{
+    padding: 10px;
+    text-align: center;
+}
+.about-hero .intro{
+    padding-left: 40px;
+    font-size: large;
+    color: rgb(214, 219, 223);
+}
+.about-hero .intro span{
+    font-weight: bolder;
+    font-size:xx-large;
+    color: #222;
+}
+.about-hero .bio{
+    font-size: large;
+    margin: 20px;
+    padding-left: 50px;
+    color: rgb(43, 46, 49);
+    width: 45%;
+}
+
+.skills .list{
+    display: flex;
+    justify-content: center;
+}
+.skills h2{
+    padding: 12px;
+    margin: 12px;
+    text-align: center;
+}
+.skills .list p{
+    align-items: center;
+    background: #cbcdd1;
+    font-size: large;
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px;
+}
+.experience{
+    padding: 12px;
+    margin: 12px;
+    text-align: center;
+}
+.experience .list{
+    margin: 20px;
+    padding: 10px;
+    width: 25rem;
+    background: whitesmoke;
+    border-radius: 12px;
+    box-shadow: 5px 5px grey;
+
+}
+.experience .list span{
+    color: #737477;
+}
+.experience .list p{
+    height: auto;
+    width: 25rem;
+    font-size: 16px;
+}
+
+@keyframes textFadeUp {
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
