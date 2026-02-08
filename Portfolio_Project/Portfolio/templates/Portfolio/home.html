@@ -1,20 +1,66 @@
 {% extends "Portfolio/base.html" %}
 {% load static %}
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static "Portfolio/css/home.css" %}">
-{% endblock %}
-{% block content %}
-<div class="home">
-    <div class="hero">
-        <h1 class="into-text">Hi, I'm <span class="name">Muhammad Ahmad</span></h1>
-        <p class="occupation">Web Developer</p>
-        <p class="para">
-          I am a passionate Web Developer specializing in modern, responsive websites and user-friendly digital experiences. I help businesses and individuals turn ideas into functional, high-quality web solutions.
-        </p>
-    </div>
-    <div class="img">
-        <img src="{% static "Portfolio\image\Ahmad.png" %}" alt="portfolioImg">
-    </div>
-</div>
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Portfolio/css/home.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Hi, I'm <span class="name">{{ profile.name }}</span></h1>
+        <h3>I am a <span class="typing"></span></h3>
+        <p>{{ profile.intro }}</p>
+
+        <div class="buttons">
+            <a href="{% url 'contact' %}" class="btn">Hire Me</a>
+            <a href="{% url 'projects' %}" class="btn outline">Projects</a>
+        </div>
+    </div>
+
+    <div class="hero-img">
+        <img src="{{ profile.image.url }}" alt="profile">
+    </div>
+</section>
+
+<script>const textArray = [
+    "Web Developer",
+    "Python Programmer",
+    "Django Developer",
+];
+
+let index = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+const typingElement = document.querySelector(".typing");
+
+function typeEffect() {
+    if (!typingElement) return;
+
+    if (!isDeleting && charIndex <= textArray[index].length) {
+        currentText = textArray[index].substring(0, charIndex++);
+    } else if (isDeleting && charIndex > 0) {
+        currentText = textArray[index].substring(0, charIndex--);
+    }
+
+    typingElement.textContent = currentText;
+
+    if (charIndex === textArray[index].length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1200);
+        return;
+    }
+
+    if (charIndex === 0 && isDeleting) {
+        isDeleting = false;
+        index = (index + 1) % textArray.length;
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 120);
+}
+
+typeEffect();
+</script>
 {% endblock content %}

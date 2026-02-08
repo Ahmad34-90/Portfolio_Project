@@ -6,27 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Muhammad Ahmad</title>
     <link rel="stylesheet" href="{% static "Portfolio/css/base.css" %}">
-    {% block extra_css %}{% endblock %}
+    {% block extra_css %}{% endblock extra_css %}
+
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-           <h1><a href="{% url "home" %}">Portfolio</a></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{% url "home" %}">Home</a></li>
-                <li><a href="{% url "about" %}">About</a></li>
-                <li><a href="{% url "projects" %}">Projects</a></li>
-                <li><a href="{% url "contact" %}">Contact Me</a></li>
-            </ul>
-        </nav>
+<header class="navbar">
+    <div class="logo">
+        <h1><a href="{% url "home" %}">Portfolio</a></h1>
     </div>
-    {% block content %}
-    {% endblock content %}
-    
-    <footer>
-        <p>@ Portfolio | Muhammad Ahmad</p>
-    </footer>
+
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li><a href="{% url "about" %}">About</a></li>
+            <li><a href="{% url "projects" %}">Projects</a></li>
+            <li><a href="{% url "contact" %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-icon" id="hamburger">☰</div>
+</header>
+{% block content %}{% endblock content %}
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
+
 </body>
 </html>

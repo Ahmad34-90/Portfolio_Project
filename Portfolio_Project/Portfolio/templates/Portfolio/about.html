@@ -8,30 +8,28 @@
     
     <div class="about-hero">
         <h1>About Me</h1>
-        <p class="intro">I'm <span>Muhammad Ahmad</span>, Web Developer.</p>
-        <p class="bio">
-            I passionate Web Developer specializing in modern, responsive websites. I love turning ideas into interactive and user-friendly web experiences. With a focus on Python, Django, and frontend technologies, I aim to build projects that are both functional and visually appealing.
-        </p>
+        <p class="intro">I'm <span>{{profile.name}}</span>, {{profile.occupation}}.</p>
+        <p class="bio">{{profile.intro}}</p>
     </div>
     <div class="skills">
         <h2>Skills</h2>
         <div class="list">
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>Python </p>
-            <p>Django</p>
+            {% for skill in skills %}
+            <p>{{skill.name}}</p>
+            {% endfor %}
         </div>
     </div>
     <div class="experience">
         <div><h2>Experience</h2></div>
         <div class="box">
             <div class="list">
-                <h3>Web Developer</h3>
-                <span class="duration">Jan 2024 - Jul - 2024</span>
-                <p>Created multiple projects including a portfolio website, a blog platform, and a Django-based web app to practice full-stack development.</p>
+                {% for experience in experience  %}
+                <h3>{{experience.title}}</h3>
+                <span class="duration">{{experience.duration}}</span>
+                <p>{{experience.description}}</p>
+                {% endfor %}
             </div>
         </div>
     </div>
-    
 </div>
 {% endblock content %}
