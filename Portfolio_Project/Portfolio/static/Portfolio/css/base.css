@@ -1,22 +1,45 @@
-body {
+/* Reset + Base */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #F8FAFC;
+    color: #1f2933;
+}
+
+/* Navbar */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    background-color: #BCCCDC;
+
+    padding: 0 24px;
     height: 70px;
+
+    background-color: #BCCCDC;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .logo a {
     text-decoration: none;
-    color: black;
+    color: #1f2933;
 }
 
+/* Nav Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -25,24 +48,49 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: #1f2933;
     font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #9AA6B2;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #9AA6B2;
+    color: #6b7c93;
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger */
 .menu-icon {
     display: none;
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
+    user-select: none;
 }
 
-/* 📱 Mobile Responsive */
+/* 📱 Mobile */
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
+    }
+
+    nav {
+        width: 100%;
     }
 
     .nav-links {
@@ -50,14 +98,27 @@ body {
         top: 70px;
         left: 0;
         width: 100%;
+
         background: #BCCCDC;
         flex-direction: column;
         align-items: center;
-        display: none;
-        padding: 1rem 0;
+
+        gap: 1.2rem;
+        
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
     }
 
     .nav-links.active {
-        display: flex;
+        max-height: 300px;
     }
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #c9cdd1;
+  font-size: 14px;
 }

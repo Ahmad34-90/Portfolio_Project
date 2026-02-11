@@ -1,80 +1,169 @@
-.about-page{
-    padding: 15px;
-    margin: 10px;
-    background-color: cadetblue;
-    animation: textFadeUp 1.2s ease forwards;
-    opacity: 1;
-}
-.about-hero h1{
-    padding: 10px;
-    text-align: center;
-}
-.about-hero .intro{
-    padding-left: 40px;
-    font-size: large;
-    color: rgb(214, 219, 223);
-}
-.about-hero .intro span{
-    font-weight: bolder;
-    font-size:xx-large;
-    color: #222;
-}
-.about-hero .bio{
-    font-size: large;
-    margin: 20px;
-    padding-left: 50px;
-    color: rgb(43, 46, 49);
-    width: 45%;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.skills .list{
+/* GLOBAL BACKGROUND */
+body {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    color: #111;
+}
+
+/* PAGE */
+.about-page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+    animation: fadeUp 0.9s ease;
+}
+
+/* HERO */
+.about-hero {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.about-hero .intro {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    color: #475569;
+}
+
+.about-hero span {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.about-hero .bio {
+    margin-top: 20px;
+    max-width: 750px;
+    margin-inline: auto;
+    color: #64748b;
+    line-height: 1.9;
+}
+
+/* SECTION HEADINGS */
+.skills h2,
+.experience h2 {
+    font-size: 2.1rem;
+    margin-bottom: 35px;
+    position: relative;
+    color: #0f172a;
+}
+
+.skills h2::after,
+.experience h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    border-radius: 5px;
+}
+
+/* SKILLS */
+.skills {
+    margin-bottom: 100px;
+}
+
+.skills .list {
     display: flex;
-    justify-content: center;
-}
-.skills h2{
-    padding: 12px;
-    margin: 12px;
-    text-align: center;
-}
-.skills .list p{
-    align-items: center;
-    background: #cbcdd1;
-    font-size: large;
-    font-weight: 500;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 12px;
-}
-.experience{
-    padding: 12px;
-    margin: 12px;
-    text-align: center;
-}
-.experience .list{
-    margin: 20px;
-    padding: 10px;
-    width: 25rem;
-    background: whitesmoke;
-    border-radius: 12px;
-    box-shadow: 5px 5px grey;
-
-}
-.experience .list span{
-    color: #737477;
-}
-.experience .list p{
-    height: auto;
-    width: 25rem;
-    font-size: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
-@keyframes textFadeUp {
-    from{
-        transform: translateY(30px);
+.skill-pill {
+    padding: 11px 22px;
+    background: rgba(79,70,229,0.08);
+    border: 1px solid rgba(79,70,229,0.25);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: #1e1b4b;
+    transition: all 0.35s ease;
+}
+
+.skill-pill:hover {
+    background: #4f46e5;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(79,70,229,0.35);
+}
+
+/* EXPERIENCE */
+.experience .list {
+    display: grid;
+    gap: 35px;
+}
+
+.experience-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.12);
+}
+
+.experience-card h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+}
+
+.duration {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.experience-card p {
+    margin-top: 14px;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
         opacity: 0;
+        transform: translateY(40px);
     }
-    to{
-        transform: translateY(0);
+    to {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .skills h2,
+    .experience h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-page {
+        padding: 60px 18px;
     }
 }

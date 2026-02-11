@@ -1,42 +1,67 @@
 {% extends "Portfolio/base.html" %}
 {% load static %}
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static "Portfolio/css/projects.css" %}">
-{% endblock %}
-{% block content %}
-<div class="project_page">
-    <h1 style="text-align:center;">Projects</h1>
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Portfolio/css/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="project_page">
+
+    <!-- PAGE TITLE -->
+    <header class="projects-header">
+        <h1>Projects</h1>
+        <p class="subtitle">
+            A collection of my recent work and personal projects
+        </p>
+    </header>
+
+    <!-- PROJECTS LIST -->
     <div class="projects">
+
         {% for project in projects %}
         <div class="column">
 
+            <!-- PROJECT INFO -->
             <div class="proj_box">
                 <h2 class="name">{{ project.title }}</h2>
 
-                <span>Overview</span>
-                <p class="overview">{{ project.overview }}</p>
+                <span class="label">Overview</span>
+                <p class="overview">
+                    {{ project.overview }}
+                </p>
 
-                <div class="links" style="text-align: center; text-decoration: underline;">
+                <!-- LINKS -->
+                <div class="links">
                     {% if project.github_link %}
-                        <a class="a" href="{{ project.github_link }}" target="_blank">GitHub</a>
+                        <a class="a" href="{{ project.github_link }}" target="_blank">
+                            GitHub
+                        </a>
                     {% endif %}
+
                     {% if project.live_link %}
-                        <a class="a" href="{{ project.live_link }}" target="_blank">Live</a>
+                        <a class="a" href="{{ project.live_link }}" target="_blank">
+                            Live Demo
+                        </a>
                     {% endif %}
                 </div>
             </div>
 
+            <!-- PROJECT IMAGE -->
             <div class="img">
                 {% if project.image %}
                     <img src="{{ project.image.url }}" alt="{{ project.title }}">
                 {% else %}
-                    <img src="{% static 'Portfolio/image/default.png' %}" alt="No Image">
+                    <img src="{% static 'Portfolio/image/default.png' %}" alt="Project image">
                 {% endif %}
             </div>
 
         </div>
+        {% empty %}
+        <p style="text-align:center;">No projects available.</p>
         {% endfor %}
+
     </div>
-</div>
+
+</section>
 {% endblock content %}
