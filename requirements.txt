@@ -1,4 +1,0 @@
-python 
-virtaul Environment
-django
-pillow
